@@ -11,17 +11,22 @@ function modalShower(event){
 
 
     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${selectedId}`)
-    .then(res=>res.json()).then(out=>{
-        card=out;
+    .then(res=>res.json()).then(card=>{
 
         const modal=document.createElement("div");
         modal.innerHTML=`
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
    <div class="modal-box">
       <article>
-    <h1 class="font-bold text-2xl mb-2 ">Fix broken image uploads</h1>
+    <h1 class="font-bold text-2xl mb-2 ">${card.title}</h1>
     <div class="flex items-center my-auto">
-        <h2 class=" bg-[#00A96E] rounded-full inline-block p-2 text-[#FFFFFF] text-[12px]  font-medium">Opened</h2>&nbsp;
+
+
+    ${card.status=="open"
+        ?`<h2 class=" bg-[#00A96E] rounded-full inline-block p-2 text-[#FFFFFF] text-[12px]  font-medium">${card.status=="open"?"Opened":"Closed"}</h2>&nbsp;`
+        :`<h2 class=" bg-[#A855F7] rounded-full inline-block p-2 text-[#FFFFFF] text-[12px]  font-medium">Closed</h2>&nbsp;`
+    }
+
         <i class="fa-solid fa-circle text-[4px] text-[#64748B]"></i>&nbsp;
         <span class="text-[#64748B] text-[12px]">Opened by Fahim Ahmed</span>&nbsp;
         <i class="fa-solid fa-circle text-[4px] text-[#64748B]"></i>&nbsp;
@@ -33,7 +38,7 @@ function modalShower(event){
         <div class="bg-secondary-content text-[#EF4444] text-[12px] border-2 border-[#FECACA] inline-block py-1.5 px-7  rounded-[6.25rem] "><i class="fa-solid fa-bug"></i> BUG</div>
         </section>
     <section>
-        <p class="text-[#64748B] text-base font-normal">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+        <p class="text-[#64748B] text-base font-normal">${card.description}</p>
     </section>
     <section class="grid grid-cols-2 bg-base-300 rounded-lg p-4">
         <div class="space-y-2">
@@ -41,8 +46,14 @@ function modalShower(event){
             <h3 class="font-semibold text-base">Fahim Ahmed</h3>
         </div>
         <div class="space-y-1.5">
-            <p class="text-base font-normal text-[#64748B] ">Priority:</p>
-            <h4 class=" inline-block text-[#FFFFFF] text-[12px] font-medium bg-[#EF4444] px-4 py-1.5 rounded-[100px] ">HIGH</h4>
+            <p class="text-base font-normal text-[#64748B]">Priority:</p>
+
+            ${card.priority=="high"
+                ?`<h4 class=" inline-block text-[#FFFFFF] text-[12px] font-medium bg-[#EF4444] px-4 py-1.5 rounded-[100px] ">HIGH</h4>`
+                :card.priority=="medium"?
+                `<h4 class=" inline-block text-[#FFFFFF] text-[12px] font-medium bg-[#F59E0B] px-4 py-1.5 rounded-[100px] ">MEDIUM</h4>`
+                :`<h4 class=" inline-block text-[#FFFFFF] text-[12px] font-medium bg-[#9CA3AF] px-4 py-1.5 rounded-[100px] ">LOW</h4>`}
+            
         </div>
     </section>
 </article>
@@ -57,7 +68,7 @@ function modalShower(event){
         `
 
         document.getElementById("card-container").appendChild(modal);
-        document.querySelector("#my_modal_5").showModal();
+        modal.querySelector("#my_modal_5").showModal();
     })
 
 }

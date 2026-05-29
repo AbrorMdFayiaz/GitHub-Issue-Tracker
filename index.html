@@ -50,11 +50,15 @@
         </nav>
     </header>
     <section id="all-open-closed" class="space-x-2 bg-base-100 w-7/10 mx-auto mt-16 mb-4  p-6 rounded-lg">
-            <button id="all" onclick="allOpenClosedButtonClickingAction(`all`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">All</button>
-            <button id="open" onclick="allOpenClosedButtonClickingAction(`open`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">Open</button>
-            <button id="closed" onclick="allOpenClosedButtonClickingAction(`closed`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">Closed</button>
-        </section>
-    <main class="bg-base-100 w-7/10 mx-auto  mb-16 rounded-t-lg">
+        <button id="all" onclick="allOpenClosedButtonClickingAction(`all`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">All</button>
+        <button id="open" onclick="allOpenClosedButtonClickingAction(`open`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">Open</button>
+        <button id="closed" onclick="allOpenClosedButtonClickingAction(`closed`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">Closed</button>
+    </section>
+    <!-- it's for spinner -->
+    <div id="spinner" class="hidden justify-center">
+        <span class="loading loading-spinner text-primary w-20 "></span>
+    </div>
+    <main id="main" class="bg-base-100 w-7/10 mx-auto  mb-16 rounded-t-lg">
         <div id="50-issues" class="flex justify-between items-center p-6">
             <section class="flex space-x-2">
                 <article class="inline-block bg-[#ECE4FF] rounded-full p-3"><img src="./assets/Aperture.png" alt=""></article>
@@ -69,15 +73,18 @@
             </section>
         </div>
         <div id="card-container" class="bg-base-200 p-6 grid grid-cols-4 gap-3">
-<!-- issue cards will be added here dynamically by js-->
-<!-- modals will also be added here dynamically by js-->
+        <!-- issue cards will be added here dynamically by js-->
+        </div>
+        <div id="modal-container">
+        <!-- modals will be added here dynamically by js-->
         </div>
     </main>
     <footer></footer>
-<script src="./script/all_Open_Closed_buttonClickingACtion.js"></script>
-<script src="./script/showCards.js"></script>
-<script src="./script/activeButtonShower.js"></script>
-<script src="./script/issueNumberShower.js"></script>
-<script src="./script/modalShowerForDatailedInfo.js"></script>
+    <script src="./script/spinner.js"></script>
+    <script src="./script/all_Open_Closed_buttonClickingACtion.js"></script>
+    <script src="./script/showCards.js"></script>
+    <script src="./script/activeButtonShower.js"></script>
+    <script src="./script/issueNumberShower.js"></script>
+    <script src="./script/modalShowerForDatailedInfo.js"></script>
 </body>
 </html>

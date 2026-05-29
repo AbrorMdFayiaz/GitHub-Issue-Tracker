@@ -1,0 +1,11 @@
+
+* {
+  font-family: "Geist", sans-serif;
+}
+.active{
+   background-color:#4A00FF;
+   border-color: #4A00FF;
+   color: #FFFFFF;
+}
+
+@import "tailwindcss"

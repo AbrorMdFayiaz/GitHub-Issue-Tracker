@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <!-- fav-icon -->
+    <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+    <!-- css file -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- daisyUI and Tailwind CSS integration -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome CSS integration -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google font application -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-base-300 pb-16">
+    <header class="bg-base-100">
+        <nav class=" ">
+            <div class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    
+    <a class="btn btn-ghost text-xl px-20"><i class="fa-brands fa-github"></i>GitHub Issues Tracker</a>
+  </div>
+  <div class="navbar-end space-x-4 px-20">
+    <!-- search box -->
+     <label class="input">
+  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input type="search" required placeholder="Search issues..." />
+</label>
+    <a class="btn btn-primary "><i class="fa-solid fa-plus" ></i>New Issue</a>
+  </div>
+</div>
+        </nav>
+    </header>
+    <section id="all-open-closed" class="space-x-2 bg-base-100 w-7/10 mx-auto mt-16 mb-4  p-6 rounded-lg">
+            <button id="all" onclick="allOpenClosedButtonClickingAction(`all`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">All</button>
+            <button id="open" onclick="allOpenClosedButtonClickingAction(`open`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">Open</button>
+            <button id="closed" onclick="allOpenClosedButtonClickingAction(`closed`)" class="btn btn-outline btn-primary text-[#64748B] border-base-300 hover:border-primary hover:text-base-100">Closed</button>
+        </section>
+    <main class="bg-base-100 w-7/10 mx-auto  mb-16 rounded-t-lg">
+        <div id="50-issues" class="flex justify-between items-center p-6">
+            <section class="flex space-x-2">
+                <article class="inline-block bg-[#ECE4FF] rounded-full p-3"><img src="./assets/Aperture.png" alt=""></article>
+                <div class="space-y-1">
+                    <h3 class="font-semibold text-2xl"><span id="issue-number"></span> Issues</h3>
+                    <p class="text-base font-normal text-[#64748B]">Track and manage your project issues</p>
+                </div>
+            </section>
+            <section>
+                <span><i class="fa-solid fa-circle text-success"></i>Open</span>
+                <span><i class="fa-solid fa-circle text-[#A855F7]"></i>Closed</span>
+            </section>
+        </div>
+        <div id="card-container" class="bg-base-200 p-6 grid grid-cols-4 gap-3">
+<!-- issue cards will be added here dynamically  by js-->
+        </div>
+    </main>
+    <footer></footer>
+<script src="./script/all_Open_Closed_buttonClickingACtion.js"></script>
+<script src="./script/showCards.js"></script>
+<script src="./script/activeButtonShower.js"></script>
+<script src="./script/issueNumberShower.js"></script>
+</body>
+</html>

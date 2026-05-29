@@ -4,9 +4,10 @@ function showCards(cardArray){
 
     cardArray.forEach(element => {
         
-
             const singleCard=document.createElement("article");
-    singleCard.classList.add(element.status=="open"?"border-[#00A96E]":"border-[#A855F7]","border-t-4","rounded-lg","bg-base-100")
+    singleCard.classList.add(element.status=="open"?"border-[#00A96E]":"border-[#A855F7]","border-t-4","rounded-lg","bg-base-100");
+    // id is added ,so that it becomes easier to find the element to attach event listener while showing modals. 
+    singleCard.id=element.id;
     singleCard.innerHTML=`<section class="p-4 flex justify-between">
                     ${element.status=="open"?`<div class="flex bg-[#CBFADB] rounded-full p-1.5 h-7"><img class="w-" src="./assets/Open-Status.png" alt=""></div>`:`<div class="flex  rounded-full p-1.5  bg-[#F0E2FF]"><i class="fa-solid fa-check text-[#A855F7] border-[#A855F7] border-2  flex  rounded-full justify-center"></i></div>`}
 
@@ -55,30 +56,3 @@ function showCards(cardArray){
     });
 
 }
-
-
-
-
-
-
-
-
-
-            // <article class="border-[#A855F7] border-t-4 rounded-lg bg-base-100">
-            //     <section class="p-4 flex justify-between">
-            //         <div class="flex  rounded-full p-1.5  bg-[#F0E2FF]"><i class="fa-solid fa-check text-[#A855F7] border-[#A855F7] border-2  flex  rounded-full justify-center"></i></div>
-            //         <div class="bg-secondary-content text-[#D97706] bg-[#FFF8DB] text-[12px] inline-block py-1.5 px-7  rounded-[6.25rem]">MEDIUM</div>
-            //     </section>
-            //     <section class="text-start px-4 pb-3">
-            //         <h2 class="font-semibold text-base">Fix navigation menu on mobile devices</h2>
-            //         <p class="font-normal text-[12px] text-[#64748B]">The navigation menu doesn't collapse properly on mobile devices...</p>
-            //     </section>
-            //     <section class="px-4 pb-4 border-r- border-2 border-b-[#E4E4E7] border-x-white border-t-white ">
-            //         <div class="bg-secondary-content text-[#EF4444] border-2 border-[#FECACA] text-[12px] inline-block py-1.5 px-2 rounded-[6.25rem] "><i class="fa-solid fa-bug"></i>Bug</div>
-            //         <div class="inline-block  text-[#D97706] bg-[#FFF8DB] border-[#FDE68A] border-2 rounded-full py-1.5 px-2  text-[12px]"><i class="fa-solid fa-life-ring"></i>HELP WANTED</div>
-            //     </section>
-            //     <section class="text-[12px] font-normal text-[#64748B] p-4">
-            //         <p>#1 by john_doe</p>
-            //         <p>1/15/2024</p>
-            //     </section>
-            // </article>

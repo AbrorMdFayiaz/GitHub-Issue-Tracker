@@ -8,7 +8,7 @@ function showCards(cardArray){
             const singleCard=document.createElement("article");
     singleCard.classList.add(element.status=="open"?"border-[#00A96E]":"border-[#A855F7]","border-t-4","rounded-lg","bg-base-100")
     singleCard.innerHTML=`<section class="p-4 flex justify-between">
-                    ${element.status=="open"?`<div class="flex bg-[#CBFADB] rounded-full p-1.5 h-7"><img class="w-" src="./assets/dashed_circle.png" alt=""></div>`:`<div class="flex  rounded-full p-1.5  bg-[#F0E2FF]"><i class="fa-solid fa-check text-[#A855F7] border-[#A855F7] border-2  flex  rounded-full justify-center"></i></div>`}
+                    ${element.status=="open"?`<div class="flex bg-[#CBFADB] rounded-full p-1.5 h-7"><img class="w-" src="./assets/Open-Status.png" alt=""></div>`:`<div class="flex  rounded-full p-1.5  bg-[#F0E2FF]"><i class="fa-solid fa-check text-[#A855F7] border-[#A855F7] border-2  flex  rounded-full justify-center"></i></div>`}
 
 
 

@@ -38,6 +38,6 @@ modal.querySelector("#my_modal_5").showModal();
         return;
     } else {
         console.log("valid");
-        window.location.assign("./index.html")
+        window.location.assign("./home.html");
     }
 }

@@ -9,7 +9,7 @@ function showCards(cardArray){
     // id is added ,so that it becomes easier to find the element to attach event listener while showing modals. 
     singleCard.id=element.id;
     singleCard.innerHTML=`<section class="p-4 flex justify-between">
-                    ${element.status=="open"?`<div class="flex bg-[#CBFADB] rounded-full p-1.5 h-7"><img class="w-" src="./assets/Open-Status.png" alt=""></div>`:`<div class="flex  rounded-full p-1.5  bg-[#F0E2FF]"><i class="fa-solid fa-check text-[#A855F7] border-[#A855F7] border-2  flex  rounded-full justify-center"></i></div>`}
+                    ${element.status=="open"?`<div class="flex bg-[#CBFADB] rounded-full p-1.5 h-7"><img class="" src="./assets/Open-Status.png" alt=""></div>`:`<div class="flex  rounded-full p-1.5  bg-[#F0E2FF]"><i class="fa-solid fa-check text-[#A855F7] border-[#A855F7] border-2  flex  rounded-full justify-center"></i></div>`}
 
 
 

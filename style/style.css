@@ -1,3 +1,4 @@
+@import "tailwindcss";
 
 * {
   font-family: "Geist", sans-serif;
@@ -7,5 +8,3 @@
    border-color: #4A00FF;
    color: #FFFFFF;
 }
-
-@import "tailwindcss"
